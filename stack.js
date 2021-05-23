@@ -1,15 +1,10 @@
 const MAX_STACK_SIZE_BY_DEFAULT = 10
 
-const isValidMaxSize = number => Boolean(
-    typeof number === `number` &&
-    !isNaN(number) &&
-    number > 0 &&
-    number < Infinity
-)
-
 const Stack = class {
     constructor(maxSize = MAX_STACK_SIZE_BY_DEFAULT) {
-        if (!isValidMaxSize(maxSize)) throw new Error(`Указан некорректный максимальный размер для стека`)
+        if (!Number.isFinite(maxSize) || maxSize <= 0) {
+            throw new Error(`Указан некорректный максимальный размер для стека`)
+        }
 
         this._container = {}
         this._maxSize = maxSize
