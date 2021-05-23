@@ -44,15 +44,6 @@ const Stack = class {
         for (const element of iterable) stack._container[stack._size++] = element
         return stack
     }
-    
-    // toArray() {
-    //     const result = []
-
-    //     while (!this.isEmpty()) result.push(this.pop())
-
-    //     for (let i = 0; i < result.length; i++) this.push(result[i])
-    //     return result
-    // }
 }
 
 module.exports = { Stack }
